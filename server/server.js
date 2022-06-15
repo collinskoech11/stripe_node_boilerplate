@@ -5,7 +5,7 @@ const app = express()
 app.use(express.json())
 app.use(express.static('public'))
 
-const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY)
+const stripe = require("stripe")("sk_test_51LApQHJt9QgggVy71YelU0F3PHk7LNLnj2ygU4uaXhHFWdTZQHeXDQ9F0wOIEECO11o1cVMEdCLeXh48usm2VslO00SYneAItG")
 
 const storeItems = new Map([
     [1, { priceInCents: 10000, name: "chair"}],
