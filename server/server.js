@@ -1,9 +1,15 @@
 require('dotenv').config
 const express = require('express')
 const app = express()
-
+const cors  = require('cors')
 app.use(express.json())
-app.use(express.static('public'))
+app.use(
+    cors({
+        origin: 'http://localhost:5500',
+        mode: 'no-cors'
+    })
+)
+
 
 const stripe = require("stripe")("sk_test_51LApQHJt9QgggVy71YelU0F3PHk7LNLnj2ygU4uaXhHFWdTZQHeXDQ9F0wOIEECO11o1cVMEdCLeXh48usm2VslO00SYneAItG")
 
